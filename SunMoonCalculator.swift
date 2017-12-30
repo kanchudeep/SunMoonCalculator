@@ -170,7 +170,7 @@ class SunMoonCalculator {
 	- returns:	Date for specified Julian day
 	- throws:	invalidJulianDay if the date does not exists*/
 	static func getDate(jd:Double) throws -> Date {
-		if jd < 2299160 && jd >= 2299150 {
+		if jd.isNaN || (jd < 2299160 && jd >= 2299150) {
 			throw Errors.invalidJulianDay(jd: jd)
 		}
 
